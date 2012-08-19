@@ -44,7 +44,7 @@ public class Panel extends JScrollPane {
 			this.manager = manager;
 
 			this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-			this.setPreferredSize(new Dimension(300,200));
+//			this.setPreferredSize(new Dimension(300,200));
 
 			checkboxMap = new HashMap<JCheckBox,Plugin>();
 			this.removeAll();
@@ -58,7 +58,7 @@ public class Panel extends JScrollPane {
 				pluginPanel.setLayout(new BorderLayout());
 				pluginPanel.add(textPanel,BorderLayout.CENTER);
 				
-				this.add(pluginPanel);				
+				this.add(pluginPanel);
 			} else {
 				for (Plugin plugin : this.manager.getAvailablePlugins()) {
 					JPanel pluginPanel = new JPanel();
@@ -84,6 +84,7 @@ public class Panel extends JScrollPane {
 					this.add(pluginPanel);
 				}
 			}
+			this.validate();
 		}
 		
 		public void actionPerformed(ActionEvent event) {
